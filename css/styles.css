@@ -4,12 +4,14 @@
   --logo-primary-color: #000000;
   --accent-color: #2196f3;
   --main-white-color: #ffffff;
-  --light-address-color: rgba(255, 255, 255, 0.6);
+  --light-address-color: #ffffff99;
   --dark-accent-color: #2f303a;
   --grey-color: #f5f4fa;
   --border-color: #ececec;
   --project-card-border-color: #eeeeee;
   --social-link-color: #afb1b8;
+  --placeholder-color: #75757580;
+  --input-border-color: #21212133;
 
   --header-text-margin-index: 10px;
   --card-padding-index: 30px;
@@ -360,7 +362,7 @@ p {
   border-radius: 4px;
   display: flex;
   margin-left: auto;
-  /* display: flex; */
+
   justify-content: center;
   align-items: center;
 }
@@ -669,10 +671,14 @@ p {
   top: 50%;
   left: 50%;
 
+  padding: 40px;
   min-height: 581px;
   min-width: 528px;
 
   background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: var(--button-radius);
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-function);
@@ -689,4 +695,77 @@ p {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+.modal-title {
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--title-text-color);
+  margin-bottom: 12px;
+}
+
+.btn-submit-form {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  font-family: inherit;
+  background-color: var(--accent-color);
+  color: var(--main-white-color);
+  cursor: pointer;
+  margin-top: 30px;
+
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 56px;
+  padding-right: 55px;
+  border-radius: var(--button-radius);
+  border-color: transparent;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+.form {
+  width: 100%;
+}
+.form-label {
+  display: block;
+}
+#mail,
+#name,
+#phone-number,
+#comment {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--button-radius);
+}
+.form-label + #name,
+.form-label + #mail,
+.form-label + #phone-number,
+.form-label + #comment {
+  margin-top: 4px;
+}
+.form-field + .form-field {
+  margin-top: 10px;
+}
+.form-label {
+  font-size: 12px;
+  line-height: 1.667;
+  letter-spacing: 0.01em;
+}
+#comment {
+  padding: 12px 16px;
+  resize: none;
+}
+#comment::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--placeholder-color);
 }
