@@ -12,6 +12,9 @@
   --social-link-color: #afb1b8;
   --placeholder-color: #75757580;
   --input-border-color: #21212133;
+  --subscribe-border-color: #ffffff4d;
+  --subscribe-shadow-color: #00000026;
+  --subscribe-input-text-color: #ffffff99;
 
   --header-text-margin-index: 10px;
   --card-padding-index: 30px;
@@ -264,6 +267,53 @@ p {
 .join-us {
   margin-left: 70px;
   padding-top: 12px;
+}
+.subscribe {
+  margin-left: 93px;
+}
+.subscribe-form-input {
+  width: 358px;
+  height: 50px;
+  border: 1px solid var(--subscribe-border-color);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px var(--subscribe-shadow-color);
+  border-radius: 4px;
+  background-color: transparent;
+
+  padding: 15px 16px;
+}
+.subscribe-form-input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--subscribe-input-text-color);
+}
+.subscribe-form-input {
+  color: var(--main-white-color);
+}
+.form-subscribe {
+  display: flex;
+}
+.btn-subscribe {
+  display: flex;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  font-family: inherit;
+  margin-left: 12px;
+  background-color: var(--accent-color);
+  color: var(--main-white-color);
+  cursor: pointer;
+
+  padding: 10px 28px 10px 29px;
+  border-radius: var(--button-radius);
+  border: none;
+  text-align: center;
+}
+.icon-send {
+  margin-left: 10px;
 }
 /*Герой */
 .hero-title {
@@ -628,8 +678,6 @@ p {
   font-size: 18px;
   line-height: 1.56;
   color: var(--main-white-color);
-
-  /* opacity: 0; */
 }
 .projects-list-item-description-box {
   padding: 63px 24px;
@@ -683,9 +731,22 @@ p {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-function);
 }
+.btn-close {
+  color: var(--logo-primary-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+.btn-close:focus,
+.btn-close:hover {
+  color: var(--accent-color);
+}
+
 .icon-close {
   width: 30px;
   height: 30px;
+  fill: currentColor;
 }
 .btn-close {
   position: absolute;
@@ -735,23 +796,28 @@ p {
 .form-label {
   display: block;
 }
-#mail,
-#name,
-#phone-number,
-#comment {
+.form-input {
   display: block;
+  font: inherit;
   width: 100%;
   border: 1px solid var(--input-border-color);
   border-radius: var(--button-radius);
+  padding: 11px 12px;
+  padding-left: 30px;
+
+  transition-property: outline-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
-.form-label + #name,
-.form-label + #mail,
-.form-label + #phone-number,
-.form-label + #comment {
+.form-label + .form-input {
   margin-top: 4px;
 }
 .form-field + .form-field {
   margin-top: 10px;
+}
+.form-input-box {
+  position: relative;
+  color: var(--title-text-color);
 }
 .form-label {
   font-size: 12px;
@@ -768,4 +834,53 @@ p {
   letter-spacing: 0.01em;
 
   color: var(--placeholder-color);
+}
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  fill: currentColor;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+.form-input-box .form-input:focus {
+  outline-color: var(--accent-color);
+}
+.form-input:focus ~ .form-icon {
+  color: var(--accent-color);
+}
+.policy-text {
+  display: inline;
+}
+.policy-field {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+.contract-terms {
+  color: var(--accent-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+.checkbox {
+  appearance: none;
+}
+.icon-policy {
+  display: inline-block;
+
+  border: 1px solid var(--title-text-color);
+  border-radius: 3px;
+  fill: var(--main-white-color);
+}
+.checkbox:checked + .icon-policy {
+  border: none;
+  fill: var(--accent-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
